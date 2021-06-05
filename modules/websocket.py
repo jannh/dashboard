@@ -1,6 +1,7 @@
 import logging
 import time
 import json
+import asyncio
 from .base.worker import Worker
 from tornado.ioloop import IOLoop
 from tornado.websocket import WebSocketHandler
@@ -171,7 +172,8 @@ class Websocket(Worker, Thread):
         application.listen(port)
 
     def run(self):
-        ioloop = IOLoop.instance()
+        asyncio.set_event_loop(asyncio.new_event_loop())
+        ioloop = IOLoop.current()
         try:
             ioloop.start()
         except RuntimeError:

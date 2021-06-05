@@ -8,7 +8,6 @@ __all__ = ["base",
     "file",
     "conversion",
     "websocket",
-    "REST",
     "persistentstorage",
     "random",
     "parsers",
@@ -24,7 +23,6 @@ from .printer import *
 from .file import *
 from .conversion import *
 from .websocket import Websocket
-from .rest import REST
 from .persistentstorage import *
 from .random import *
 from .parsers import JSONParser
